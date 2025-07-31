@@ -1,0 +1,35 @@
+
+.text-purple {
+  color: #6f42c1;
+}
+
+.bg-purple {
+  background-color: #6f42c1;
+}
+
+.bg-purple-light {
+  background-color: #f5ebff; 
+}
+
+.btn-purple {
+  background-color: #6f42c1;
+  color: white;
+  font-weight: bold;
+  border: none;
+}
+
+.btn-purple:hover {
+  background-color: #5a32a3;
+  color: white;
+}
+
+.login-box {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+}
+
+.app-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
