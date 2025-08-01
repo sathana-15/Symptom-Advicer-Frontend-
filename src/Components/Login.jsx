@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./Login.css"; 
 import "bootstrap-icons/font/bootstrap-icons.css"; 
+const backend_url = import.meta.env.VITE_BACKEND_URL;
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -13,7 +14,7 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:8080/api/auth/login", {
+      const response = await axios.post(`${backend_url}/api/auth/login`, {
         email,
         password,
       });

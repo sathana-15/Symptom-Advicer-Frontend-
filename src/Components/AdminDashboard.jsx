@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+const backend_url = import.meta.env.VITE_BACKEND_URL;
 import "bootstrap/dist/css/bootstrap.min.css";
 import {
   FaUser,
@@ -33,7 +34,7 @@ const AdminDashboard = () => {
 
   const fetchPatients = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/patient/patients", axiosConfig);
+      const response = await axios.get(`${backend_url}/patient/patients`, axiosConfig);
       setPatients(response.data);
       setView("patients");
     } catch (error) {
@@ -46,7 +47,7 @@ const AdminDashboard = () => {
 
   const fetchSymptoms = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/api/symptoms", axiosConfig);
+      const response = await axios.get(`${backend_url}/api/symptoms`, axiosConfig);
       setSymptoms(response.data);
       setView("symptoms");
     } catch (error) {
@@ -59,7 +60,7 @@ const AdminDashboard = () => {
 
   const fetchAdvices = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/api/advice", axiosConfig);
+      const response = await axios.get(`${backend_url}/api/advice`, axiosConfig);
       setAdvices(response.data);
       setView("advices");
     } catch (error) {
@@ -73,7 +74,7 @@ const AdminDashboard = () => {
   const addAdvice = async () => {
     try {
       await axios.post(
-        "http://localhost:8080/api/advice",
+        `${backend_url}/api/advice`,
         { symptomKeyword: keyword, adviceText: description },
         axiosConfig
       );
@@ -92,7 +93,7 @@ const AdminDashboard = () => {
 
   const deletePatient = async (id) => {
     try {
-      await axios.delete(`http://localhost:8080/patient/patients/${id}`, axiosConfig);
+      await axios.delete(`${backend_url}/patient/patients/${id}`, axiosConfig);
       setMessage("Patient deleted successfully");
       fetchPatients();
     } catch (error) {
@@ -106,7 +107,7 @@ const AdminDashboard = () => {
   const updatePatient = async () => {
     try {
       await axios.put(
-        `http://localhost:8080/patient/patients/${editingPatient.id}`,
+        `${backend_url}/patient/patients/${editingPatient.id}`,
         editPatientData,
         axiosConfig
       );

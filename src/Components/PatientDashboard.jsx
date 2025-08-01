@@ -3,7 +3,8 @@ import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './PatientDashboard.css';
 import { FaTachometerAlt } from 'react-icons/fa'; 
-import { useNavigate } from 'react-router-dom'; 
+import { useNavigate } from 'react-router-dom';
+const backend_url = import.meta.env.VITE_BACKEND_URL; 
 
 const PatientDashboard = () => {
   const [patients, setPatients] = useState([]);
@@ -17,7 +18,7 @@ const PatientDashboard = () => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:8080/patient/patients', {
+      .get(`${backend_url}/patient/patients`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
@@ -41,7 +42,7 @@ const PatientDashboard = () => {
 
     try {
       const res = await axios.post(
-        'http://localhost:8080/api/symptoms/submit',
+        `${backend_url}/api/symptoms/submit`,
         symptomData,
         {
           headers: {

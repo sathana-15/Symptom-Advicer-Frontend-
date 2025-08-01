@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './DoctorDashboard.css';
 import { FaTachometerAlt } from 'react-icons/fa'; 
 import { useNavigate } from 'react-router-dom';
+const backend_url = import.meta.env.VITE_BACKEND_URL;
 
 const DoctorDashboard = () => {
   const [patients, setPatients] = useState([]);
@@ -25,7 +26,7 @@ const DoctorDashboard = () => {
 
   async function fetchPatients() {
     try {
-      const res = await axios.get('http://localhost:8080/patient/patients', authHeader);
+      const res = await axios.get(`${backend_url}/patient/patients`, authHeader);
       const onlyPatients = res.data.filter(user =>
         Array.isArray(user.roles)
           ? user.roles.includes("ROLE_PATIENT")
@@ -39,7 +40,7 @@ const DoctorDashboard = () => {
 
   async function fetchSymptoms() {
     try {
-      const res = await axios.get('http://localhost:8080/api/symptoms', authHeader);
+      const res = await axios.get(`${backend_url}/api/symptoms`, authHeader);
       setSymptoms(Array.isArray(res.data) ? res.data : []);
     } catch (err) {
       console.error('Error fetching symptoms:', err);
@@ -48,7 +49,7 @@ const DoctorDashboard = () => {
 
   async function fetchAdvices() {
     try {
-      const res = await axios.get('http://localhost:8080/api/advice', authHeader);
+      const res = await axios.get(`${backend_url}/api/advice`, authHeader);
       setAdvices(Array.isArray(res.data) ? res.data : []);
     } catch (err) {
       console.error('Error fetching advices:', err);
@@ -58,7 +59,7 @@ const DoctorDashboard = () => {
   async function handleAdviceSubmit(e) {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:8080/api/advice', newAdvice, authHeader);
+      await axios.post(`${backend_url}/api/advice`, newAdvice, authHeader);
       setMessage('✅ Advice added successfully.');
       setNewAdvice({ symptomKeyword: '', adviceText: '' });
       fetchAdvices();

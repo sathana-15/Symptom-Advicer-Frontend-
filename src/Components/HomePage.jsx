@@ -1,6 +1,7 @@
 import React from 'react';
 import './HomePage.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 import { useNavigate } from 'react-router-dom';
 import { FaUser, FaNotesMedical, FaStethoscope, FaLightbulb, FaTachometerAlt } from "react-icons/fa";
 

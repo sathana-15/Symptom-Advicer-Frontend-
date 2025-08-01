@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import '../Components/Login.css'; 
+const backend_url = import.meta.env.VITE_BACKEND_URL;
 
 
 const Register = () => {
@@ -30,7 +31,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:8080/patient/patients', formData);
+      const res = await axios.post(`${backend_url}/patient/patients`, formData);
       setMessage('Registration successful!');
       navigate('/login');
     } catch (err) {
