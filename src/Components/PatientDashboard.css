@@ -1,29 +1,61 @@
-
 .text-purple {
-  color: #6f42c1 !important;
+  color: #6f42c1;
 }
 
 .btn-purple {
   background-color: #6f42c1;
   color: white;
+  border: none;
 }
 
 .btn-purple:hover {
-  background-color: #5a33a2;
+  background-color: #59359c;
+}
+
+
+.dashboard-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(111, 66, 193, 0.1);
+  text-align: left;
+}
+
+
+.alert-purple {
+  background-color: #ede2fa;
+  color: #4a2a84;
+  border: 1px solid #d2baf2;
+}
+
+.dashboard-background {
+  background-color: #f8f9fa; 
+  min-height: 100vh;
+  padding: 1.5rem 0;
+}
+
+.dashboard-card {
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 0 15px rgba(128, 0, 128, 0.1);
+}
+
+.text-purple {
+  color: #6f42c1;
+}
+
+.btn-purple {
+  background-color: #6f42c1;
   color: white;
+  border: none;
+}
+
+.btn-purple:hover {
+  background-color: #5a32a3;
 }
 
 .alert-purple {
-  background-color: #f5edff;
+  background-color: #f3e8ff;
+  color: #6f42c1;
   border-left: 5px solid #6f42c1;
-  color: #4b2b88;
-}
-
-
-.dashboard-box {
-  background-color: white;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
-  width: 100%;
-  max-width: 750px;
 }

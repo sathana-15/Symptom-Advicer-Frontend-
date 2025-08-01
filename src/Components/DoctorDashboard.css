@@ -1,9 +1,14 @@
+.dashboard-background {
+  background-color: #f8f9fa; 
+  min-height: 100vh;
+  padding: 1.5rem 0;
+}
 .text-purple {
   color: #6f42c1;
 }
 
 .bg-purple {
-  background-color: #6f42c1;
+  background-color: #6f42c1 !important;
 }
 
 .btn-purple {
@@ -13,5 +18,14 @@
 }
 
 .btn-purple:hover {
-  background-color: #5a33a6;
+  background-color: #5a32a3;
+}
+
+.card-title {
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+.shadow-sm {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
 }

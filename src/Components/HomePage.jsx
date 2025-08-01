@@ -33,8 +33,8 @@ const HomePage = () => {
     
       <div className="container mt-5">
         <div className="welcome-card shadow p-4 mb-4 rounded bg-white">
-          <h2 className="text-purple fw-bold">Welcome back !!</h2>
-          <p className="text-muted">Here’s what’s happening in your health today</p>
+          <h2 className="text-purple fw-bold">👋 Hello! Welcome Back</h2>
+          <p className="text-muted">Feeling unwell? Submit your symptoms and get trusted advice.</p>
         </div>
 
       
